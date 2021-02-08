@@ -1,0 +1,68 @@
+command to make project 
+django-admin startproject mysite 
+create an app inside project
+python3 manage.py startapp main
+run server command
+python3 manage.py runserver
+add an app to  installed apps in setings.py
+
+then python3 manage.py makemigrations
+python 3 manage.py migrate
+
+python3 manage.py sqlmigrate main 0001
+
+python3 manage.py  shell
+
+In [2]: Tutorial.objects.all()
+Out[2]: <QuerySet []>
+
+In [3]: from django.utils import Timezone
+---------------------------------------------------------------------------
+ImportError                               Traceback (most recent call last)
+<ipython-input-3-a0f0ef076456> in <module>
+----> 1 from django.utils import Timezone
+
+ImportError: cannot import name 'Timezone'
+
+In [4]: from django.utils import timezone
+
+In [5]: new_tutorial=Tutorial
+
+In [6]: new_tutorial=Tutorial(tutorial_title="test_title",tutorial_content="test_content",tutorial
+   ...: _publish=timezone.now())
+
+In [7]: new_tutorial.save()
+
+In [8]: Tutorial.objects.all()
+Out[8]: <QuerySet [<Tutorial: test_title>]>
+
+In [9]: for t  in Tutorial.objects.all():
+   ...:     print(t.tutorial_title)
+   ...: 
+test_title
+
+create a superuser
+
+python3 manage.py createsuperuser
+
+
+install a editor for django admin panel 
+pip3  install django-tinymce4-lite
+
+for  jinza2 templating
+
+{{variable}}
+{%logic%}
+safe is used to tell django that is safe to render the html in one of the column of model
+
+
+from django.contrib.auth.models import User
+
+
+
+
+
+
+
+
+
